@@ -1,0 +1,10 @@
+const express = require('express')
+const isAuth = require('../Middlewares/isAuth')
+const adminAuth = require('../Middlewares/adminAuth')
+const { PlaceOrder, GetUserOrders, adminOrders, ChangeStatus } = require('../Controllers/OrderController')
+const OrderRouter = express.Router()
+OrderRouter.post('/order-product',isAuth,PlaceOrder)
+OrderRouter.get('/user-orders',isAuth,GetUserOrders)
+OrderRouter.get('/admin-orders',adminAuth,adminOrders)
+OrderRouter.post('/update-order-status',adminAuth,ChangeStatus)
+module.exports = OrderRouter
