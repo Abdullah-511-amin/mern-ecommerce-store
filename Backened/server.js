@@ -9,12 +9,18 @@ const ProductRouter = require('./Routes/ProductRoutes')
 const OrderRouter = require('./Routes/OrderRoutes')
 const app = express()
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(cookie_parser())
+
 app.use(cors({
-    origin: ['http://localhost:5173','http://localhost:5174'], 
+    origin: [
+        'http://localhost:5173',
+        'http://localhost:5174',
+        'https://mern-ecommerce-store.vercel.app',
+        'https://your-admin.vercel.app'
+    ],
     credentials: true
 }))
 app.get('/', (req, res) => {
@@ -22,9 +28,9 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/v1/auth', AuthRouter)
-app.use('/api/v1/user',UserRouter)
-app.use('/api/v1/product',ProductRouter)
-app.use('/api/v1',OrderRouter)
+app.use('/api/v1/user', UserRouter)
+app.use('/api/v1/product', ProductRouter)
+app.use('/api/v1', OrderRouter)
 app.listen(port, () => {
     console.log('Server Started')
     Connectdb()

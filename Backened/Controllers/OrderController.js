@@ -28,6 +28,11 @@ const PlaceOrder = async (req, res) => {
                 message: "Order Placed Successfully",
                 order
             });
+        }else{
+            return res.status(404).json({
+                success:true,
+                message:'yr abhi payment ma issue aaa rha hn isi liye ye band hn ap na cod use kro'
+            })
         }
 
     } catch (error) {

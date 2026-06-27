@@ -51,6 +51,9 @@ function PlaceOrder() {
             (total, item) => total + (item.productId.price * item.quantity), 0
         ) || 0
         const totalAmount = subtotal + 100
+        if (paymentMethoud === 'RAZORPAY') {
+            alert('please use cod because payment methoud have issues so no one can use it')
+        }
         const orderdata = {
             address: addressdata,
             items: cartdata,
