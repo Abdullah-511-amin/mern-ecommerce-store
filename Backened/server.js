@@ -19,7 +19,7 @@ app.use(cors({
     origin: [
         'http://localhost:5173',
         'http://localhost:5174',
-        'https://mern-ecommerce-store.vercel.app'  
+        'https://mern-ecommerce-store-phi.vercel.app'  // ✅ sahi URL
     ],
     credentials: true
 }))
