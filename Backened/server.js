@@ -18,8 +18,8 @@ app.use(cors({
     origin: [
         'http://localhost:5173',
         'http://localhost:5174',
-        'https://mern-ecommerce-store-phi.vercel.app',
-        'https://mern-ecommerce-store-git-main-ownersofstartups.vercel.app'  // ✅ ye add karo
+        'https://mern-ecommerce-store-git-main-ownersofstartups.vercel.app',
+        'https://mern-ecommerce-store-admin.vercel.app'  // ✅ admin ka URL yahan add karo
     ],
     credentials: true
 }))
