@@ -12,14 +12,13 @@ const app = express()
 const port = process.env.PORT || 5000
 
 app.use(express.json())
-app.use(cookie_parser())
 
+app.use(cookie_parser())
 app.use(cors({
     origin: [
         'http://localhost:5173',
         'http://localhost:5174',
-        'https://mern-ecommerce-store.vercel.app',
-        'https://your-admin.vercel.app'
+        'https://mern-ecommerce-store-phi.vercel.app'
     ],
     credentials: true
 }))
